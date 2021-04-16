@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:size_measure/SizeMeasureContext.dart';
 import 'package:size_measure/SizedContext.dart';
 
-void main() 
+void main()
 {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget 
+class MyApp extends StatelessWidget
 {
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) 
+  Widget build(BuildContext context)
   {
     return MaterialApp
     (
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget
   }
 }
 
-class MyHomePage extends StatelessWidget 
+class MyHomePage extends StatelessWidget
 {
   MyHomePage({Key? key, this.title}) : super(key: key);
 
@@ -49,24 +50,24 @@ class MyHomePage extends StatelessWidget
   String? title;
 
   @override
-  Widget build(BuildContext context) 
+  Widget build(BuildContext context)
   {
-  
-    var ppi = context.pixelsPerInch;
-    
+
+    final measure = SizeMeasure(context);
+    final r = measure.mmToPixels(20);
+
     return Scaffold
     (
-      
       body: Container
       (
         child: Column
         (
-          children: 
+          children:
           [
             CircleAvatar
             (
               backgroundColor: Colors.amberAccent,
-              radius: context.pixelsPerInch,
+              radius: r,
               child: Text("Muj textik"),
             ),
           ],

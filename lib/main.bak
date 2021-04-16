@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:size_measure/SizeMeasureContext.dart';
+import 'package:size_measure/SizedContext.dart';
 
 void main() 
 {
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget
 
 class MyHomePage extends StatelessWidget 
 {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -45,11 +47,15 @@ class MyHomePage extends StatelessWidget
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
-  final String title;
+  String? title;
 
   @override
   Widget build(BuildContext context) 
   {
+  
+    final measure = SizeMeasure(context);
+    final r = measure.mmToPixels(20);
+    
     return Scaffold
     (
       body: Container
@@ -61,9 +67,9 @@ class MyHomePage extends StatelessWidget
             CircleAvatar
             (
               backgroundColor: Colors.amberAccent,
+              radius: r,
               child: Text("Muj textik"),
-              ),
-            
+            ),
           ],
         ),
       ),
