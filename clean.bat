@@ -1,6 +1,10 @@
 rem rd .dart_tool /q /s
 rem del .packages
-del /q /f /s "*.tmp"
+rd build /q /s
+rd .dart_tool /q /s
+rd windows\flutter\ephemeral /q /s
+del /q /f /s *.bak
+del /q /f /s *.tmp
 del /q /f /s *.suo
 del /q /f /s *.user
 del /q /f /s *.userosscache

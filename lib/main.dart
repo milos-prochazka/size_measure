@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:size_measure/SizeMeasureContext.dart';
+import 'package:size_measure/MediaSize.dart';
 import 'package:size_measure/SizedContext.dart';
 
 void main()
@@ -53,8 +53,9 @@ class MyHomePage extends StatelessWidget
   Widget build(BuildContext context)
   {
 
-    final measure = SizeMeasure(context);
-    final r = measure.mmToPixels(20);
+    final measure = MediaSize(context);
+    final r = NamedDistance(20, DistanceUnit.MM).toPixels(measure);
+    final h = measure.screenHeight;
 
     return Scaffold
     (
