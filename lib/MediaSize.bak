@@ -8,7 +8,7 @@ import 'dart:io' show Platform;
 
 class MediaSize
 {
-    /// Internal MediaQueryData object
+    /// Internal MediaQueryData object 
     late final MediaQueryData media;
 
     /// Convert constant device logical pixels to inch
@@ -23,7 +23,7 @@ class MediaSize
         media = MediaQuery.of(context);
         pixelsPerInch = ( Platform.isAndroid || Platform.isIOS? 150 : 96);
         pixelsPerMM = pixelsPerInch / 25.4;
-
+        
     }
 
     /// Converts logical pixels to device-dependent pixels
@@ -35,31 +35,31 @@ class MediaSize
     /// Converts inches to logical pixels
     double inchesToPixels(var inches) => pixelsPerInch*inches;
 
-    /// Converts logical pixels to inches
+    /// Converts logical pixels to inches 
     double pixelsToInches(var pixels) => pixels / pixelsPerInch;
 
-    /// Converts milimeters to logical pixels
+    /// Converts milimeters to logical pixels 
     double mmToPixels(var mm) => pixelsPerMM*mm;
 
-    /// Converts logical pixels to milimeters
+    /// Converts logical pixels to milimeters  
     double pixelsToMM(var pixels) => pixels / pixelsPerMM;
 
-    /// Converts Size in logical pixels to inches
+    /// Converts Size in logical pixels to inches  
     Size sizeToInches(Size size) => Size(size.width / pixelsPerInch , size.height / pixelsPerInch);
-
-    /// Converts Size in inches to logical pixels
+    
+    /// Converts Size in inches to logical pixels    
     Size sizePixelsToInches(Size size) => Size(size.width * pixelsPerInch , size.height * pixelsPerInch);
 
-    /// Converts Size in logical pixels to milimeters
+    /// Converts Size in logical pixels to milimeters  
     Size sizeToMM(Size size) => Size(size.width / pixelsPerMM , size.height / pixelsPerMM);
-
-    /// Converts Size in milimeters to logical pixels
+    
+    /// Converts Size in milimeters to logical pixels   
     Size sizePixelsToMM(Size size) => Size(size.width * pixelsPerMM , size.height * pixelsPerMM);
 
-    /// Converts Size in logical pixels to device-dependent pixels
+    /// Converts Size in logical pixels to device-dependent pixels  
     Size sizeToDpx(Size size) => Size(size.width / media.devicePixelRatio , size.height / media.devicePixelRatio);
-
-    /// Converts Size in device-dependent pixels to logical pixels
+    
+    /// Converts Size in device-dependent pixels to logical pixels    
     Size sizePixelsToDpx(Size size) => Size(size.width * media.devicePixelRatio , size.height * media.devicePixelRatio);
 
     /// Screen width in logical pixels
@@ -99,7 +99,7 @@ enum DistanceUnit
     Px,Dpx,Inch,MM
 }
 
-///
+/// 
 class NamedDistance
 {
       double value;
